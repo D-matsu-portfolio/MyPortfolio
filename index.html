@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            overflow: auto;
+            padding: 0 2rem;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 0;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-content h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .project-content > p {
+            flex-grow: 1;
+        }
+        .project-content .tech {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 1rem;
+        }
+        .project-links {
+            margin-top: 1rem;
+        }
+        .project-links a {
+            text-decoration: none;
+            color: #fff;
+            background: #337ab7;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .project-links a:hover {
+            background: #286090;
+        }
+        .project-links a.github {
+            background: #555;
+        }
+        .project-links a.github:hover {
+            background: #444;
+        }
+        .about-me {
+            background: #fff;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .about-me h2 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        /* Accordion styles */
+        .accordion {
+            margin-top: 1rem;
+        }
+        .accordion summary {
+            font-weight: bold;
+            background-color: #f9f9f9;
+            padding: 0.5rem 1rem;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.2s;
+        }
+        .accordion summary:hover {
+            background-color: #f1f1f1;
+        }
+        .accordion .demo-content {
+            padding: 1rem;
+            border: 1px solid #eee;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+        .demo-content ol {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+        .demo-content code.address {
+            display: block;
+            background: #e7e7e7;
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin: 0.3rem 0;
+            font-family: monospace;
+            word-break: break-all;
+            user-select: all;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>My Portfolio</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="projects" class="projects">
+
+            <!-- Project 1: KINNIKU-TOKEN CHALLENGE -->
+            <div class="project-card">
+                <img src="images/kinniku-token.png" alt="KINNIKU-TOKEN CHALLENGE Screenshot">
+                <div class="project-content">
+                    <h3>KINNIKU-TOKEN CHALLENGE</h3>
+                    <p>日々の筋トレをブロックチェーンに記録し、努力をトークンとして可視化できるフィットネスアプリ。AIトレーナーがモチベーション維持をサポートします。</p>
+                    
+                    <details class="accordion">
+                        <summary>▶ インタラクティブ・デモ</summary>
+                        <div class="demo-content">
+                            <ol>
+                                <li>「アプリを見る」からアプリを開きます。</li>
+                                <li>下記のサンプルアドレスをコピーして入力してください。</li>
+                                <li><code class="address">NA5TDGC3GXFIUNO4ACRQRW635CFX6EK4AUD4MWI</code></li>
+                                <li>記録ボタンを押すと、トークン、AIのメッセージ、バッジの変化などを確認できます。</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <p class="tech"><strong>使用技術:</strong> JavaScript, Gemini API, Symbol SDK, Vercel</p>
+                    <div class="project-links">
+                        <a href="https://porfolio-xymzap.vercel.app/" target="_blank">アプリを見る</a>
+                        <a href="https://github.com/D-matsu-portfolio" class="github" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Hand Memory -->
+            <div class="project-card">
+                <img src="images/hand-memory.png" alt="Hand Memory Screenshot">
+                <div class="project-content">
+                    <h3>Hand Memory - AI手相占い</h3>
+                    <p>Next.jsで構築した、AIによる画像認識を用いた手相占いアプリ。手のひらの写真をアップロードするだけで、本格的な占い結果を視覚的に楽しめます。</p>
+                    <p class="tech"><strong>使用技術:</strong> Next.js, React, Gemini API, Vercel Serverless Functions</p>
+                    <div class="project-links">
+                        <a href="https://portfolio-hand-memory.vercel.app/" target="_blank">アプリを見る</a>
+                        <a href="https://github.com/D-matsu-portfolio" class="github" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Wanwan Campsite -->
+            <div class="project-card">
+                <img src="images/wanwan-campsite.png" alt="Wanwan Campsite Screenshot">
+                <div class="project-content">
+                    <h3>Wanwan Campsite</h3>
+                    <p>愛犬との旅行を計画する飼い主のためのキャンプ場予約サイト。親しみやすいUIに加え、AIチャットボットがいつでも質問に答えてくれます。</p>
+                    <p class="tech"><strong>使用技術:</strong> HTML, CSS, JavaScript, Bootstrap, Gemini API, Vercel</p>
+                    <div class="project-links">
+                        <a href="https://portfolio-wanwan-campsite.vercel.app/" target="_blank">アプリを見る</a>
+                        <a href="https://github.com/D-matsu-portfolio" class="github" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="about" class="about-me">
+            <h2>About Me</h2>
+            <p>AIを活用し、アイデアを素早く形にすることが得意です。コーディングの知識はまだ学習過程ですが、Geminiとの対話を通じて開発を進め、GitHubとVercelによる自動公開の仕組みも実践。ブロックチェーンや画像認識といった新しい分野にも挑戦しながら、日々学び成長し続けています。</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 D-matsu. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
